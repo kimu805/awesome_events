@@ -67,3 +67,5 @@ group :test do
   gem "selenium-webdriver"
 
 end
+
+gem "hamlit-rails", "~> 0.2.3"
