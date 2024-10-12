@@ -4,7 +4,7 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable, :omniauthable, omniauth_providers: [:github]
 
-  def self.from_omniauth
-    
+  def self.from_omniauth(auth)
+    binding.pry
   end
 end
