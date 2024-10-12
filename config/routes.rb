@@ -4,4 +4,5 @@ Rails.application.routes.draw do
     omniauth_callbacks: "users/omniauth_callbacks",
     registrations: "user/registrations"
   }
+  devise_for :users
 end
