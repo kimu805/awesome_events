@@ -75,5 +75,4 @@ gem "jquery-rails"
 
 gem "devise"
 
-
 gem "pry-rails"
