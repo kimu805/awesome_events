@@ -75,7 +75,6 @@ gem "jquery-rails"
 
 gem "devise"
 
-gem "omniauth", "~>2.1.1"
 gem "omniauth-github"
 gem "omniauth-rails_csrf_protection"
 
