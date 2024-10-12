@@ -75,6 +75,5 @@ gem "jquery-rails"
 
 gem "devise"
 
-gem "omniauth-rails_csrf_protection"
 
 gem "pry-rails"
