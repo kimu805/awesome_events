@@ -14,7 +14,7 @@
         = link_to "AwesomeEvents", root_path, class: "navbar-brand"
         %ul.navbar-nav
           %li.nav-item
-            = button_to  "Githubでログイン", user_github_omniauth_authorize_path, class: "nav-link", data: { turbo: false }
+            = button_to "Githubでログイン", "/auth/github", class: "nav-link", data: { turbo: false }
           %li.nav-item
             = link_to "ログイン", new_user_session_path, class: "nav-link"
           %li.nav-item
