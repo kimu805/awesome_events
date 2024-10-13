@@ -17,7 +17,7 @@
             %li.nav-item
               = link_to current_user.nickname, "#", class: "nav-link"
             %li.nav-item
-              = link_to "イベントを作る", 
+              = link_to "イベントを作る", new_event_path, class: "nav-link"
             %li.nav-item
               = link_to "ログアウト", destroy_user_session_path, class: "nav-link", data: {turbo_method: :delete}
           - else
@@ -26,4 +26,10 @@
             %li.nav-item
               = link_to "新規登録", new_user_registration_path, class: "nav-link"
       .container
+        - if flash.notice
+          .alert.alert-success
+            = flash.notice 
+        - elsif flash.alert
+          .alert.alert-danger
+            = flash.alert 
     = yield
