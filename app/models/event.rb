@@ -8,8 +8,9 @@ class Event < ApplicationRecord
     validates :content, length: { maximum: 2000 }
     validates :start_at
     validates :end_at
-    validate :start_at_should_be_before_end_at
   end
+
+  validate :start_at_should_be_before_end_at
 
   private
 
