@@ -15,6 +15,8 @@
         %ul.navbar-nav
           - if user_signed_in?
             %li.nav-item
+              = link_to current_user.nickname, "#", class: "nav-link"
+            %li.nav-item
               = link_to "ログアウト", destroy_user_session_path, class: "nav-link", data: {turbo_method: :delete}
           - else
             %li.nav-item
