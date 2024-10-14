@@ -8,3 +8,13 @@ ja:
       - :month
       - :day
     month_names: [ ~ , "January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]
+  activerecord:
+    models:
+      event: イベント
+    attributes:
+      event:
+        name: 名前
+        place: 場所
+        start_at: 開始時間
+        end_at: 終了時間
+        content: 内容
