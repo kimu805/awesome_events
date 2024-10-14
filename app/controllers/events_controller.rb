@@ -1,5 +1,5 @@
 class EventsController < ApplicationController
-  before_action :authenticate_user!
+  before_action :authenticate_user!, except: [:show]
 
   def new
     @event = current_user.created_events.build
@@ -11,6 +11,10 @@ class EventsController < ApplicationController
     if @event.save
       redirect_to @event, notice: "#{@event.name}を作成しました。"
     end
+  end
+
+  def show
+    @event = Event.find(params[:id])
   end
 
   private
