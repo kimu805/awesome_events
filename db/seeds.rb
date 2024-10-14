@@ -11,6 +11,7 @@ User.create!(
   password: "111111",
   password_confirmation: "111111"
 )
+
 10.times do |i|
   start_start_at = Date.new(2024, 10, 20)
   start_end_at = Date.new(2024, 10, 31)
