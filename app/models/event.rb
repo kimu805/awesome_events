@@ -1,5 +1,6 @@
 class Event < ApplicationRecord
   # Association
+  belongs_to :owner, class_name: "User"
 
   # Validation
   with_options presence: true do
@@ -11,6 +12,10 @@ class Event < ApplicationRecord
   end
 
   validate :start_at_should_be_before_end_at
+
+  # scope
+  scope :not_started, -> { where("start_at > ?", Time.zone.now) }
+  scope :recent, -> { order("start_at")}
 
   private
 
