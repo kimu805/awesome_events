@@ -9,6 +9,7 @@
     = stylesheet_link_tag "application", "data-turbo-track": "reload"
     = javascript_importmap_tags
   %body
+    %header.navbar.navbar-expand-sm.navbar-light.bg-light.mb-3
       .container
         = link_to "AwesomeEvents", root_path, class: "navbar-brand"
         %ul.navbar-nav
