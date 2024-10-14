@@ -14,6 +14,6 @@
 .card.mb-2
   %h5.card-header 主催者
   .card-body
-    = link_to("https://github.com/#{@event.owner.name}", class: "card-link") do
-      = "@#{@event.owner.name}"
+    = link_to("https://github.com/#{@event.owner.nickname}", class: "") do
+      = "@#{@event.owner.nickname}"
 
