@@ -1,10 +1,6 @@
 class EventsController < ApplicationController
   before_action :authenticate_user!, except: [:show]
 
-  def index
-    @events = Event.not_started.recent
-  end
-
   def new
     @event = current_user.created_events.build
   end
