@@ -1,8 +1,4 @@
 class EventsController < ApplicationController
-  before_action -> {
-    authenticate_user! except: [:show],
-    set_event only: [:show, :edit, :update, :destroy]
-  }
   before_action :authenticate_user!, except: [:show]
 
   def new
