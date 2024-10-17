@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2024_10_13_090808) do
+ActiveRecord::Schema[7.0].define(version: 2024_10_17_124100) do
   create_table "events", charset: "utf8", force: :cascade do |t|
     t.bigint "owner_id"
     t.string "name", null: false
@@ -20,6 +20,17 @@ ActiveRecord::Schema[7.0].define(version: 2024_10_13_090808) do
     t.text "content", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "tickets", charset: "utf8", force: :cascade do |t|
+    t.bigint "user_id"
+    t.bigint "event_id", null: false
+    t.string "comment"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["event_id"], name: "fk_rails_4def87ea62"
+    t.index ["user_id", "event_id"], name: "index_tickets_on_user_id_and_event_id", unique: true
+    t.index ["user_id"], name: "index_tickets_on_user_id"
   end
 
   create_table "users", charset: "utf8", force: :cascade do |t|
@@ -35,4 +46,5 @@ ActiveRecord::Schema[7.0].define(version: 2024_10_13_090808) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "tickets", "events"
 end
