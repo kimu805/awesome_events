@@ -26,6 +26,8 @@ class EventsController < ApplicationController
   def update
     if @event.update(event_params)
       redirect_to @event, notice: "「#{@event.name}」を編集しました。"
+    else
+      render :edit, status: :unprocessable_entity
     end
   end
 
