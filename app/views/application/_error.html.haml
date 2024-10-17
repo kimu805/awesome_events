@@ -1,0 +1,6 @@
+.alert.alert-danger
+  = binding.pry 
+  - if model && model.errors.any?
+    %ul.mb-0
+      - model.errors.full_messages.each do |message|
+        %li.error_message= message
