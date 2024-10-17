@@ -2,8 +2,8 @@
 
 %h1.mt-2 イベント作成
 
-= form_with( model: @event, class: "form-horizontal" ) do |f|
-  #errors
+= form_with( model: @event, class: "form-horizontal", local: true ) do |f|
+  = render partial: "error", locals: { model: @event }
   .form-group.mb-3
     = f.label :name
     = f.text_field :name, class: "form-control"
