@@ -4,7 +4,7 @@
     .card.mb-2
       %h5.card-header イベント内容
       .card-body
-        %p.card-text= @event.content
+        %p.card-text= simple_format(h(@event.content), {}, sanitize: false, wrapper_tag: "div")
     .card.mb-2
       %h5.card-header 開催時間
       .card-body
