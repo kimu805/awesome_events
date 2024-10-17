@@ -26,5 +26,12 @@
       %button.btn.btn-primary.btn-lg.btn-block{ "data-bs-toggle": "modal", "data-bs-target": "#createTicket" }
         参加する
       .modal.fade#createTicket
+        .modal-dialog
+          .modal-content
+            .modal-header.d-flex.justify-content-between
+              %h4.modal-title#dialogHeader 参加コメント
+              %button.close{ type: "button", "data-bs-dismiss": "modal" } &times;
+            = form_with(model: @event.tickets.build, url: event_tickets_path(@event)) do |f|
+              .modal-body
 
 = link_to "back", :back, class: "link-secondary"
