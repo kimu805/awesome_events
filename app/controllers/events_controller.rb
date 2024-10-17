@@ -11,6 +11,8 @@ class EventsController < ApplicationController
 
     if @event.save
       redirect_to @event, notice: "「#{@event.name}」を作成しました。"
+    else
+      render :new, status: :unprocessable_entity
     end
   end
 
@@ -25,6 +27,11 @@ class EventsController < ApplicationController
     if @event.update(event_params)
       redirect_to @event, notice: "「#{@event.name}」を編集しました。"
     end
+  end
+
+  def destroy
+    @event.destroy!
+    redirect_to root_path, notice: "「#{@event.name}」を削除しました。"
   end
 
   private
