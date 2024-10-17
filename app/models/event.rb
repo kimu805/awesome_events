@@ -1,6 +1,7 @@
 class Event < ApplicationRecord
   # Association
   belongs_to :owner, class_name: "User"
+  has_many :tickets
 
   # Validation
   with_options presence: true do
