@@ -17,6 +17,12 @@ class Event < ApplicationRecord
   scope :not_started, -> { where("start_at > ?", Time.zone.now) }
   scope :recent, -> { order("start_at")}
 
+  # method
+  def created_by?(user)
+    return false unless user
+    owner_id == user.id
+  end
+
   private
 
   def start_at_should_be_before_end_at
