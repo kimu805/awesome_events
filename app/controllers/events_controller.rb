@@ -3,6 +3,7 @@ class EventsController < ApplicationController
     authenticate_user! except: [:show],
     set_event only: [:show, :edit, :update, :destroy]
   }
+  before_action :authenticate_user!, except: [:show]
 
   def new
     @event = current_user.created_events.build
@@ -17,9 +18,11 @@ class EventsController < ApplicationController
   end
 
   def show
+    @event = Event.find(params[:id])
   end
 
   def edit
+    @event = Event.find(params[:id])
   end
 
   private
