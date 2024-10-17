@@ -10,7 +10,7 @@ class EventsController < ApplicationController
     @event = current_user.created_events.build(event_params)
 
     if @event.save
-      redirect_to @event, notice: "#{@event.name}を作成しました。"
+      redirect_to @event, notice: "「#{@event.name}」を作成しました。"
     end
   end
 
@@ -18,6 +18,12 @@ class EventsController < ApplicationController
   end
 
   def edit
+  end
+
+  def update
+    if @event.update(event_params)
+      redirect_to @event, notice: "「#{@event.name}」を編集しました。"
+    end
   end
 
   private
