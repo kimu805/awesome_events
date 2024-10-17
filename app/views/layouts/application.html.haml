@@ -9,13 +9,15 @@
     = stylesheet_link_tag "application", "data-turbo-track": "reload"
     = javascript_importmap_tags
   %body
-    %header.navbar.navbar-expand-sm.navbar-light.bg-light
+    %header.navbar.navbar-expand-sm.navbar-light.bg-light.mb-3
       .container
         = link_to "AwesomeEvents", root_path, class: "navbar-brand"
         %ul.navbar-nav
           - if user_signed_in?
             %li.nav-item
               = link_to current_user.nickname, "#", class: "nav-link"
+            %li.nav-item
+              = link_to "イベントを作る", new_event_path, class: "nav-link"
             %li.nav-item
               = link_to "ログアウト", destroy_user_session_path, class: "nav-link", data: {turbo_method: :delete}
           - else
@@ -24,4 +26,10 @@
             %li.nav-item
               = link_to "新規登録", new_user_registration_path, class: "nav-link"
       .container
+    - if flash.notice
+      .alert.alert-success
+        = flash.notice 
+    - elsif flash.alert
+      .alert.alert-danger
+        = flash.alert 
     = yield

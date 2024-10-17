@@ -76,3 +76,5 @@ gem "jquery-rails"
 gem "devise"
 
 gem "pry-rails"
+
+gem "rails-i18n"
