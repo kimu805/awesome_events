@@ -20,6 +20,7 @@
           = "@#{@event.owner.nickname}"
   .col-3
     - if @event.created_by?(current_user)
-      = link_to "イベントを編集する", edit_event_path(@event), class: "btn btn-info btn-lg btn-block"
+      = link_to "イベントを編集する", edit_event_path(@event), class: "btn btn-info btn-lg btn-block mb-3"
+      = link_to "イベントを削除する", event_path(@event), data: { turbo_confirm: "「#{@event.name}」を削除します。よろしいですか？", turbo_method: :delete}, class: "btn btn-danger btn-lg btn-block"
 
 = link_to "back", :back, class: "link-secondary"
