@@ -1,7 +1,7 @@
 class Event < ApplicationRecord
   # Association
   belongs_to :owner, class_name: "User"
-  has_many :tickets
+  has_many :tickets, dependent: :destroy
 
   # Validation
   with_options presence: true do

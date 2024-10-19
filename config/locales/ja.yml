@@ -13,6 +13,7 @@ ja:
   activerecord:
     models:
       event: イベント
+      ticket: チケット
     attributes:
       event:
         name: 名前
@@ -20,3 +21,5 @@ ja:
         start_at: 開始時間
         end_at: 終了時間
         content: 内容
+      ticket:
+        comment: コメント
