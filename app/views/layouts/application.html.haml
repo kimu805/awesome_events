@@ -20,6 +20,8 @@
               = link_to "イベントを作る", new_event_path, class: "nav-link"
             %li.nav-item
               = link_to "ログアウト", destroy_user_session_path, class: "nav-link", data: {turbo_method: :delete}
+            %li.nav-item
+              = link_to "退会", new_retirement_path, class: "nav-link"
           - else
             %li.nav-item
               = link_to "ログイン", new_user_session_path, class: "nav-link"
