@@ -16,10 +16,8 @@ class User < ApplicationRecord
     end
 
     if participating_events.where(":now < end_at", now: now).exists?
-      errors[:base] << "未終了の参加イベントが存在します"
+      errors.add(:base, "未終了の参加イベントが存在します" )
     end
-
-    binding.pry
     
     throw(:abort) unless errors.empty?
   end
