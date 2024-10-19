@@ -4,5 +4,5 @@ Rails.application.routes.draw do
   resources :events do
     resources :tickets
   end
-  resources :retirements
+  resource :retirements
 end
