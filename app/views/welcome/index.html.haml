@@ -4,4 +4,5 @@
   - @events.each do |event|
     = link_to(event_path(event), class: "list-group-item list-group-item-action") do
       %h5.list-group-item-heading= event.name
+      = event.owner.nickname
       %p.mb-1= "#{l(event.start_at, format: :long)} - #{l(event.end_at, format: :long)}" 
