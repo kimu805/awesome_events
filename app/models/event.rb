@@ -26,6 +26,8 @@ class Event < ApplicationRecord
     owner_id == user.id
   end
 
+  before_save :remove_image_if_user_accept
+
   private
 
   def start_at_should_be_before_end_at
