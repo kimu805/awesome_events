@@ -2,6 +2,7 @@ class Event < ApplicationRecord
   # Association
   belongs_to :owner, class_name: "User"
   has_many :tickets, dependent: :destroy
+  has_one_attached :image
 
   # Validation
   with_options presence: true do
