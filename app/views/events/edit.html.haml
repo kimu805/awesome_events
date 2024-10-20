@@ -24,7 +24,7 @@
   .form-group.mb-3
     = f.label :image
     - if @event.image.attached?
-      = image_tag @event.image, class: "img-ghumbnail d-block mb-3", width: 400, height: 200
+      = image_tag(@event.image.variant(resize_to_fit: [400,400]), class: "img-thumbnail d-block mb-3")
     = f.file_field :image, class: "form-control-file"
     - if @event.image.attached?
       .checkbox
